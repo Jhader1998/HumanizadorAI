@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humanizador de Textos IA - QRLocker Tools</title>
-    <!-- Código de Google AdSense (Mismo cliente) -->
+    <!-- Código de Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2314070981371621"
          crossorigin="anonymous"></script>
     <!-- Tailwind CSS -->
@@ -17,7 +17,7 @@
     <!-- Notificación Toast -->
     <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center space-x-2 text-sm">
         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-        <span id="toast-message">¡Texto humanizado con éxito!</span>
+        <span id="toast-message">¡Texto humanizado de forma agresiva!</span>
     </div>
 
     <!-- MODAL DE POLÍTICA DE PRIVACIDAD -->
@@ -28,7 +28,7 @@
                 <button onclick="cerrarModal('privacidad')" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                <p>En <b>QRLocker Tools</b>, valoramos la privacidad de nuestros usuarios y el procesamiento seguro de los textos ingresados.</p>
+                <p>En <b>QRLocker Tools</b>, valoramos la privacidad de nuestros usuarios y el procesamiento seguro de los textos.</p>
             </div>
             <div class="text-right pt-2">
                 <button onclick="cerrarModal('privacidad')" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium">Entendido</button>
@@ -52,20 +52,18 @@
         </div>
     </div>
 
-    <!-- Cabecera -->
+    <!-- Cabecera Independiente -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="bg-indigo-600 text-white p-2 rounded-xl">
                     <i data-lucide="wand-2" class="w-6 h-6"></i>
                 </div>
-                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador IA</span>
+                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador IA Pro</span>
             </div>
-            <nav class="flex space-x-6 text-sm font-medium text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition flex items-center space-x-1">
-                    <i data-lucide="qr-code" class="w-4 h-4"></i><span>Ir a Generador QR</span>
-                </a>
-            </nav>
+            <div class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full font-semibold">
+                Modo Chat & Coloquial Activado
+            </div>
         </div>
     </header>
 
@@ -83,8 +81,8 @@
         <!-- SECCIÓN: HUMANIZADOR -->
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h1 class="text-3xl font-extrabold text-slate-900">Transformador de Texto Robótico a Natural</h1>
-                <p class="text-slate-500 text-sm">Pega tu texto generado por IA y reestructúralo automáticamente para que suene fluido, natural y escrito por una persona.</p>
+                <h1 class="text-3xl font-extrabold text-slate-900">Transformador Ultra-Natural (Estilo Chat)</h1>
+                <p class="text-slate-500 text-sm">Elimina el patrón robótico de la IA y reescribe el contenido con un estilo conversacional y directo. Los cambios se resaltarán en amarillo.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 items-start">
@@ -92,32 +90,36 @@
                 <!-- Caja de Entrada -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
                     <div class="flex justify-between items-center">
-                        <label class="block text-sm font-semibold text-slate-700">Texto Original (IA / Robótico)</label>
+                        <label class="block text-sm font-semibold text-slate-700">Texto Original (Robótico / IA)</label>
                         <span id="contador-original" class="text-xs text-slate-400">0 palabras</span>
                     </div>
-                    <textarea id="texto-entrada" rows="8" oninput="actualizarContadores()" placeholder="Pega aquí el texto que deseas humanizar..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
+                    <textarea id="texto-entrada" rows="9" oninput="actualizarContadores()" placeholder="Pega aquí tu texto robótico..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
                     
                     <div class="flex justify-between items-center pt-2">
-                        <button onclick="limpiarTexto()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar texto</button>
-                        <button onclick="humanizarTexto()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            <span>Humanizar Texto</span>
+                        <button onclick="limpiarTexto()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar</button>
+                        <button onclick="humanizarTextoAgresivo()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
+                            <i data-lucide="zap" class="w-4 h-4"></i>
+                            <span>Humanizar Agresivo</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Caja de Salida / Resultado -->
+                <!-- Caja de Salida / Resultado con Resaltado en Amarillo -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
                     <div class="flex justify-between items-center">
-                        <label class="block text-sm font-semibold text-slate-700">Texto Humanizado (Resultado)</label>
+                        <label class="block text-sm font-semibold text-slate-700">Texto Humanizado (Con cambios en amarillo)</label>
                         <span id="contador-resultado" class="text-xs text-slate-400">0 palabras</span>
                     </div>
-                    <textarea id="texto-salida" rows="8" readonly placeholder="El texto mejorado aparecerá aquí..." class="w-full p-4 border border-slate-100 bg-slate-50 rounded-xl text-sm resize-none text-slate-700 focus:outline-none"></textarea>
+                    
+                    <!-- Contenedor editable/visualizador con fondo claro para ver el marcado en amarillo -->
+                    <div id="resultado-container" class="w-full h-[225px] p-4 border border-slate-200 bg-slate-50 rounded-xl text-sm overflow-y-auto text-slate-700 select-text leading-relaxed">
+                        <span class="text-slate-400">El texto fluido y natural aparecerá aquí...</span>
+                    </div>
                     
                     <div class="flex justify-end pt-2">
-                        <button onclick="copiarTexto()" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-6 py-2.5 rounded-xl shadow transition flex items-center space-x-2 text-sm">
+                        <button onclick="copiarTextoResultado()" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-6 py-2.5 rounded-xl shadow transition flex items-center space-x-2 text-sm">
                             <i data-lucide="copy" class="w-4 h-4"></i>
-                            <span>Copiar Resultado</span>
+                            <span>Copiar Texto Limpio</span>
                         </button>
                     </div>
                 </div>
@@ -137,11 +139,13 @@
         </div>
     </footer>
 
-    <!-- Lógica de JavaScript del Humanizador -->
+    <!-- Lógica de JavaScript Avanzada -->
     <script>
         lucide.createIcons();
+        let textoLimpioGlobal = "";
 
-        function abrirModal(tipo) { document.getElementById(`modal-${tipo}`).classList.remove('hidden'); }
+        function abrirModal(tipo) { document.getElementById(`modal-${tipo}`).classList.add('hidden'); // por si acaso
+            document.getElementById(`modal-${tipo}`).classList.remove('hidden'); }
         function cerrarModal(tipo) { document.getElementById(`modal-${tipo}`).classList.add('hidden'); }
 
         function actualizarContadores() {
@@ -152,47 +156,64 @@
 
         function limpiarTexto() {
             document.getElementById('texto-entrada').value = "";
-            document.getElementById('texto-salida').value = "";
+            document.getElementById('resultado-container').innerHTML = `<span class="text-slate-400">El texto fluido y natural aparecerá aquí...</span>`;
+            textoLimpioGlobal = "";
             actualizarContadores();
             document.getElementById('contador-resultado').textContent = "0 palabras";
             mostrarToast('Texto limpiado');
         }
 
-        function humanizarTexto() {
+        function humanizarTextoAgresivo() {
             let texto = document.getElementById('texto-entrada').value.trim();
             if (!texto) {
-                mostrarToast('Por favor ingresa un texto para humanizar.');
+                mostrarToast('Por favor ingresa un texto para procesar.');
                 return;
             }
 
-            // Simulación de algoritmos inteligentes de humanización de redacción
-            let humanizado = texto
-                .replace(/En conclusión,/gi, "Para resumir,")
-                .replace(/Es importante destacar que/gi, "Vale la pena mencionar que")
-                .replace(/Por lo tanto,/gi, "Así que")
-                .replace(/Adicionalmente,/gi, "Además,")
-                .replace(/Cabe señalar que/gi, "Tengamos en cuenta que")
-                .replace(/En resumen,/gi, "En pocas palabras,")
-                .replace(/por ejemplo,/gi, "como por ejemplo,");
+            // Frases típicas de IA que delatan el texto y sus reemplazos agresivos estilo chat
+            const reemplazos = [
+                { regex: /Es importante destacar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">La neta es que</mark>' },
+                { regex: /En la actualidad,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hoy en día</mark>' },
+                { regex: /Por consiguiente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Así que</mark>' },
+                { regex: /Asimismo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">También</mark>' },
+                { regex: /En conclusión,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">En fin,</mark>' },
+                { regex: /Por lo tanto,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Por eso</mark>' },
+                { regex: /Cabe señalar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Ojo, que</mark>' },
+                { regex: /Adicionalmente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Además</mark>' },
+                { regex: /En resumen,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Resumiendo,</mark>' },
+                { regex: /es fundamental que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">toca sí o sí</mark>' },
+                { regex: /proporciona una variedad de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">te tira un montón de</mark>' },
+                { regex: /juega un papel crucial/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">es clave</mark>' },
+                { regex: /en orden de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para</mark>' },
+                { regex: /a fin de que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para que</mark>' }
+            ];
 
-            // Añadir fluidez natural variando conectores robóticos comunes
-            humanizado = humanizado.charAt(0).toUpperCase() + humanizado.slice(1);
+            let textoModificado = texto;
+            reemplazos.forEach(item => {
+                textoModificado = textoModificado.replace(item.regex, item.cambio);
+            });
 
-            document.getElementById('texto-salida').value = humanizado;
-            const palabrasRes = humanizado.split(/\s+/).length;
+            // Guardar texto limpio sin etiquetas HTML para cuando el usuario quiera copiarlo
+            let temporalDiv = document.createElement('div');
+            temporalDiv.innerHTML = textoModificado;
+            textoLimpioGlobal = temporalDiv.textContent || temporalDiv.innerText || "";
+
+            // Mostrar en pantalla con marcas amarillas
+            document.getElementById('resultado-container').innerHTML = textoModificado;
+            
+            const palabrasRes = textoLimpioGlobal.split(/\s+/).length;
             document.getElementById('contador-resultado').textContent = `${palabrasRes} palabras`;
             
-            mostrarToast('¡Texto humanizado con éxito!');
+            mostrarToast('¡Texto humanizado y cambios marcados en amarillo!');
         }
 
-        function copiarTexto() {
-            const salida = document.getElementById('texto-salida');
-            if (!salida.value) {
-                mostrarToast('No hay texto para copiar.');
+        function copiarTextoResultado() {
+            if (!textoLimpioGlobal) {
+                mostrarToast('Primero humaniza un texto.');
                 return;
             }
-            navigator.clipboard.writeText(salida.value);
-            mostrarToast('¡Copiado al portapapeles!');
+            navigator.clipboard.writeText(textoLimpioGlobal);
+            mostrarToast('¡Texto limpio copiado al portapapeles!');
         }
 
         function mostrarToast(mensaje) {
