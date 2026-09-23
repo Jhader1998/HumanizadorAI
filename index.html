@@ -17,7 +17,7 @@
     <!-- Notificación Toast -->
     <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center space-x-2 text-sm">
         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-        <span id="toast-message">¡Texto humanizado profundamente!</span>
+        <span id="toast-message">¡Texto humanizado por completo!</span>
     </div>
 
     <!-- MODAL DE POLÍTICA DE PRIVACIDAD -->
@@ -62,7 +62,7 @@
                 <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador IA Pro</span>
             </div>
             <div class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full font-semibold">
-                Modo Ultra-Agresivo & Chat
+                Modo Multicapa & Reescritura Activa
             </div>
         </div>
     </header>
@@ -81,8 +81,8 @@
         <!-- SECCIÓN: HUMANIZADOR -->
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h1 class="text-3xl font-extrabold text-slate-900">Transformador de Textos IA</h1>
-                <p class="text-slate-500 text-sm">Elimina por completo el estilo artificial y robótico. Los cambios profundos se resaltarán en amarillo.</p>
+                <h1 class="text-3xl font-extrabold text-slate-900">Transformador Profundo de Textos IA</h1>
+                <p class="text-slate-500 text-sm">Elimina los patrones artificiales, modismos corporativos y terminaciones robóticas. Las modificaciones masivas se marcarán en amarillo.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 items-start">
@@ -93,11 +93,11 @@
                         <label class="block text-sm font-semibold text-slate-700">Texto Original (IA)</label>
                         <span id="contador-original" class="text-xs text-slate-400">0 palabras</span>
                     </div>
-                    <textarea id="texto-entrada" rows="9" oninput="actualizarContadores()" placeholder="Pega aquí tu texto artificial..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
+                    <textarea id="texto-entrada" rows="10" oninput="actualizarContadores()" placeholder="Pega aquí tu texto artificial..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
                     
                     <div class="flex justify-between items-center pt-2">
                         <button onclick="limpiarTexto()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar</button>
-                        <button onclick="humanizarTextoAgresivo()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
+                        <button onclick="humanizarTextoMasivo()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
                             <i data-lucide="zap" class="w-4 h-4"></i>
                             <span>Humanizar a Fondo</span>
                         </button>
@@ -107,12 +107,12 @@
                 <!-- Caja de Salida / Resultado con Resaltado en Amarillo -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
                     <div class="flex justify-between items-center">
-                        <label class="block text-sm font-semibold text-slate-700">Texto Humano (Cambios en Amarillo)</label>
+                        <label class="block text-sm font-semibold text-slate-700">Texto Natural (Cambios en Amarillo)</label>
                         <span id="contador-resultado" class="text-xs text-slate-400">0 palabras</span>
                     </div>
                     
-                    <div id="resultado-container" class="w-full h-[225px] p-4 border border-slate-200 bg-slate-50 rounded-xl text-sm overflow-y-auto text-slate-700 select-text leading-relaxed">
-                        <span class="text-slate-400">El texto natural aparecerá aquí...</span>
+                    <div id="resultado-container" class="w-full h-[240px] p-4 border border-slate-200 bg-slate-50 rounded-xl text-sm overflow-y-auto text-slate-700 select-text leading-relaxed">
+                        <span class="text-slate-400">El texto natural y fluido aparecerá aquí...</span>
                     </div>
                     
                     <div class="flex justify-end pt-2">
@@ -138,7 +138,7 @@
         </div>
     </footer>
 
-    <!-- Lógica de JavaScript Ultra-Agresiva -->
+    <!-- Lógica de JavaScript Masiva y Multicapa -->
     <script>
         lucide.createIcons();
         let textoLimpioGlobal = "";
@@ -154,38 +154,35 @@
 
         function limpiarTexto() {
             document.getElementById('texto-entrada').value = "";
-            document.getElementById('resultado-container').innerHTML = `<span class="text-slate-400">El texto natural aparecerá aquí...</span>`;
+            document.getElementById('resultado-container').innerHTML = `<span class="text-slate-400">El texto natural y fluido aparecerá aquí...</span>`;
             textoLimpioGlobal = "";
             actualizarContadores();
             document.getElementById('contador-resultado').textContent = "0 palabras";
             mostrarToast('Texto limpiado');
         }
 
-        function humanizarTextoAgresivo() {
+        function humanizarTextoMasivo() {
             let texto = document.getElementById('texto-entrada').value.trim();
             if (!texto) {
                 mostrarToast('Por favor ingresa un texto para procesar.');
                 return;
             }
 
-            // Diccionario masivo de expresiones corporativas / de IA a lenguaje común y natural
-            const reemplazos = [
-                // Conectores formales pesados
-                { regex: /Es importante destacar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">La verdad es que</mark>' },
-                { regex: /Es fundamental comprender que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hay que entender de una vez que</mark>' },
+            // 1. Diccionario amplio de expresiones robóticas y corporativas de IA
+            const reemplazosFrases = [
+                { regex: /Es importante destacar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">La neta es que</mark>' },
+                { regex: /Es fundamental comprender que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hay que entender bien que</mark>' },
                 { regex: /En la actualidad,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hoy en día</mark>' },
                 { regex: /Por consiguiente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Así que</mark>' },
-                { regex: /Asimismo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">También</mark>' },
-                { regex: /En conclusión,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">En resumen,</mark>' },
+                { regex: /Asimismo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Además</mark>' },
+                { regex: /En conclusión,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Para acabar,</mark>' },
                 { regex: /Por lo tanto,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Por eso</mark>' },
                 { regex: /Cabe señalar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Ojo con esto:</mark>' },
-                { regex: /Adicionalmente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Además</mark>' },
-                { regex: /En resumen,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Para acabar,</mark>' },
+                { regex: /Adicionalmente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">También</mark>' },
+                { regex: /En resumen,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Resumiendo,</mark>' },
                 { regex: /A lo largo de los años,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Con el tiempo,</mark>' },
                 { regex: /Sin embargo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Pero ojo,</mark>' },
                 { regex: /Por otro lado,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Por otro lado</mark>' },
-
-                // Frases típicas de ChatGPT / IA
                 { regex: /es fundamental que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">toca sí o sí</mark>' },
                 { regex: /proporciona una variedad de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">te trae un buen de</mark>' },
                 { regex: /juega un papel crucial/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">es clave</mark>' },
@@ -199,22 +196,53 @@
                 { regex: /por lo general,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">casi siempre</mark>' },
                 { regex: /debido a que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">porque</mark>' },
                 { regex: /con la finalidad de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para</mark>' },
-                { regex: /efectivamente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">la neta,</mark>' },
                 { regex: /por ende,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">entonces</mark>' }
             ];
 
             let textoModificado = texto;
-            reemplazos.forEach(item => {
+            reemplazosFrases.forEach(item => {
                 textoModificado = textoModificado.replace(item.regex, item.cambio);
             });
 
-            // Limpieza general de palabras corporativas robóticas sueltas
-            textoModificado = textoModificado
-                .replace(/\butilizar\b/gi, '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>')
-                .replace(/\badquirir\b/gi, '<mark class="bg-yellow-200 px-1 rounded font-medium">conseguir</mark>')
-                .replace(/\bcomunicarse\b/gi, '<mark class="bg-yellow-200 px-1 rounded font-medium">hablar</mark>')
-                .replace(/\baprox\./gi, 'más o menos')
-                .replace(/\binicialmente\b/gi, '<mark class="bg-yellow-200 px-1 rounded font-medium">al principio</mark>');
+            // 2. Diccionario de palabras individuales frecuentes generadas por IA
+            const palabrasClave = [
+                { regex: /\butilizar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>' },
+                { regex: /\badquirir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">conseguir</mark>' },
+                { regex: /\bcomunicarse\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">hablar</mark>' },
+                { regex: /\bimplementar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">armar</mark>' },
+                { regex: /\bgarantizar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">asegurar</mark>' },
+                { regex: /\bfacilitar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">hacer más fácil</mark>' },
+                { regex: /\bóptimo\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">ideal</mark>' },
+                { regex: /\bdesarrollar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">crear</mark>' },
+                { regex: /\bexcepcional\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">buenísimo</mark>' },
+                { regex: /\bdemostrar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">mostrar</mark>' },
+                { regex: /\brequerir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">pedir</mark>' }
+            ];
+
+            palabrasClave.forEach(item => {
+                textoModificado = textoModificado.replace(item.regex, item.cambio);
+            });
+
+            // 3. Transformación algorítmica masiva de adverbios en "-mente" (muy típicos de la IA)
+            // Esto detecta cualquier palabra terminada en mente y la suaviza o resalta
+            textoModificado = textoModificado.replace(/\b([a-záéíóúñ]+)mente\b/gi, function(match, raiz) {
+                // Si la palabra es muy común, la convertimos de forma natural
+                let conversionesComunes = {
+                    'actual': 'hoy en día',
+                    'fundamental': 'básicamente',
+                    'principal': 'sobre todo',
+                    'total': 'por completo',
+                    'general': 'casi siempre',
+                    'clara': 'bien',
+                    'precisa': 'exacto'
+                };
+                let raizLower = raiz.toLowerCase();
+                if (conversionesComunes[raizLower]) {
+                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${conversionesComunes[raizLower]}</mark>`;
+                } else {
+                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${raiz} de forma clara</mark>`;
+                }
+            });
 
             // Guardar texto limpio sin etiquetas HTML para cuando el usuario quiera copiarlo
             let temporalDiv = document.createElement('div');
