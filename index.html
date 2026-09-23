@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humanizador de Textos IA Pro - QRLocker Tools</title>
+    <title>Humanizador Pro - Asistente de Reescritura Natural</title>
     <!-- Código de Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2314070981371621"
          crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
     <!-- Notificación Toast -->
     <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center space-x-2 text-sm">
         <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-        <span id="toast-message">¡Estructura y palabras humanizadas con éxito!</span>
+        <span id="toast-message">¡Estrategia aplicada con éxito!</span>
     </div>
 
     <!-- MODAL DE POLÍTICA DE PRIVACIDAD -->
@@ -44,7 +44,7 @@
                 <button onclick="cerrarModal('terminos')" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                <p>El servicio de humanización de textos se ofrece de forma gratuita bajo la modalidad "tal cual".</p>
+                <p>El servicio de asistencia de reescritura se ofrece de forma gratuita bajo la modalidad "tal cual".</p>
             </div>
             <div class="text-right pt-2">
                 <button onclick="cerrarModal('terminos')" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium">Aceptar</button>
@@ -52,17 +52,17 @@
         </div>
     </div>
 
-    <!-- Cabecera Independiente -->
+    <!-- Cabecera -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="bg-indigo-600 text-white p-2 rounded-xl">
-                    <i data-lucide="wand-2" class="w-6 h-6"></i>
+                    <i data-lucide="layout-list" class="w-6 h-6"></i>
                 </div>
-                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador IA Pro</span>
+                <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador Pro (Método Seguro)</span>
             </div>
             <div class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full font-semibold">
-                Motor Estructural y Conversacional
+                Asistente Anti-Detección
             </div>
         </div>
     </header>
@@ -78,49 +78,73 @@
             </div>
         </div>
 
-        <!-- SECCIÓN: HUMANIZADOR -->
+        <!-- SECCIÓN: ASISTENTE INTERACTIVO -->
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h1 class="text-3xl font-extrabold text-slate-900">Transformador Estructural de Textos IA</h1>
-                <p class="text-slate-500 text-sm">Rompe patrones robóticos, modifica frases corporativas y aplica sinónimos de chat de forma masiva. Cambios marcados en amarillo.</p>
+                <h1 class="text-3xl font-extrabold text-slate-900">Desglose y Estructuración Natural</h1>
+                <p class="text-slate-500 text-sm">Los detectores de IA odian las estructuras repetitivas. Pega tu texto y usa nuestro sistema de 3 pasos para romper bloques, extraer ideas clave y darles formato humano.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 items-start">
+            <div class="grid md:grid-cols-12 gap-6 items-start">
                 
-                <!-- Caja de Entrada -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
+                <!-- Columna Izquierda: Entrada de Texto -->
+                <div class="md:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
                     <div class="flex justify-between items-center">
-                        <label class="block text-sm font-semibold text-slate-700">Texto Original (IA)</label>
+                        <label class="block text-sm font-semibold text-slate-700">1. Pega tu texto artificial aquí</label>
                         <span id="contador-original" class="text-xs text-slate-400">0 palabras</span>
                     </div>
-                    <textarea id="texto-entrada" rows="10" oninput="actualizarContadores()" placeholder="Pega aquí tu texto artificial..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
+                    <textarea id="texto-entrada" rows="12" oninput="actualizarContadores()" placeholder="Pega aquí el contenido que generó la IA..." class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm resize-none"></textarea>
                     
                     <div class="flex justify-between items-center pt-2">
-                        <button onclick="limpiarTexto()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar</button>
-                        <button onclick="humanizarTextoAvanzado()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
-                            <i data-lucide="zap" class="w-4 h-4"></i>
-                            <span>Humanizar Estructura y Estilo</span>
+                        <button onclick="limpiarTodo()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar campo</button>
+                        <button onclick="procesarMetodoHumano()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Generar Estructura Humana</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Caja de Salida / Resultado con Resaltado en Amarillo -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 flex flex-col">
-                    <div class="flex justify-between items-center">
-                        <label class="block text-sm font-semibold text-slate-700">Texto Natural (Cambios en Amarillo)</label>
-                        <span id="contador-resultado" class="text-xs text-slate-400">0 palabras</span>
-                    </div>
+                <!-- Columna Derecha: Resultado Estructurado en 3 Pasos -->
+                <div class="md:col-span-6 space-y-6">
                     
-                    <div id="resultado-container" class="w-full h-[240px] p-4 border border-slate-200 bg-slate-50 rounded-xl text-sm overflow-y-auto text-slate-700 select-text leading-relaxed">
-                        <span class="text-slate-400">El texto natural y reestructurado aparecerá aquí...</span>
+                    <!-- PASO 1: Resumen de Puntos Clave -->
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+                        <div class="flex items-center space-x-2 text-indigo-600 font-bold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-extrabold">1</span>
+                            <span>Ideas Clave y Viñetas Naturales</span>
+                        </div>
+                        <div id="resumen-viñetas" class="text-xs text-slate-600 bg-slate-50 p-3 rounded-xl min-h-[60px] leading-relaxed">
+                            Aquí aparecerán los puntos resumidos de forma directa y sin relleno robótico.
+                        </div>
                     </div>
-                    
-                    <div class="flex justify-end pt-2">
-                        <button onclick="copiarTextoResultado()" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-6 py-2.5 rounded-xl shadow transition flex items-center space-x-2 text-sm">
-                            <i data-lucide="copy" class="w-4 h-4"></i>
-                            <span>Copiar Texto Limpio</span>
-                        </button>
+
+                    <!-- PASO 2: Párrafos Cortos Humanizados -->
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+                        <div class="flex items-center space-x-2 text-indigo-600 font-bold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-extrabold">2</span>
+                            <span>Párrafos Cortos (Ritmo Humano)</span>
+                        </div>
+                        <div id="parrafos-cortos" class="text-xs text-slate-600 bg-slate-50 p-3 rounded-xl min-h-[80px] leading-relaxed overflow-y-auto max-h-[120px]">
+                            El texto fragmentado en oraciones breves y directas aparecerá aquí.
+                        </div>
                     </div>
+
+                    <!-- PASO 3: Copiar Formato Limpio -->
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+                        <div class="flex items-center space-x-2 text-indigo-600 font-bold text-sm">
+                            <span class="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-extrabold">3</span>
+                            <span>Texto Final Depurado</span>
+                        </div>
+                        <textarea id="texto-final-copiable" rows="3" readonly placeholder="El resultado listo para usar..." class="w-full p-3 border border-slate-200 bg-slate-50 rounded-xl text-xs resize-none text-slate-700 focus:outline-none"></textarea>
+                        
+                        <div class="flex justify-end">
+                            <button onclick="copiarResultadoFinal()" class="bg-slate-900 hover:bg-slate-800 text-white font-medium px-5 py-2 rounded-xl shadow transition flex items-center space-x-2 text-xs">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span>Copiar Resultado</span>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -138,10 +162,9 @@
         </div>
     </footer>
 
-    <!-- Motor Avanzado de Humanización en JavaScript -->
+    <!-- Lógica del Asistente de Reestructuración -->
     <script>
         lucide.createIcons();
-        let textoLimpioGlobal = "";
 
         function abrirModal(tipo) { document.getElementById(`modal-${tipo}`).classList.remove('hidden'); }
         function cerrarModal(tipo) { document.getElementById(`modal-${tipo}`).classList.add('hidden'); }
@@ -152,137 +175,59 @@
             document.getElementById('contador-original').textContent = `${palabras} palabras`;
         }
 
-        function limpiarTexto() {
+        function limpiarTodo() {
             document.getElementById('texto-entrada').value = "";
-            document.getElementById('resultado-container').innerHTML = `<span class="text-slate-400">El texto natural y reestructurado aparecerá aquí...</span>`;
-            textoLimpioGlobal = "";
+            document.getElementById('resumen-viñetas').innerHTML = "Aquí aparecerán los puntos resumidos de forma directa y sin relleno robótico.";
+            document.getElementById('parrafos-cortos').innerHTML = "El texto fragmentado en oraciones breves y directas aparecerá aquí.";
+            document.getElementById('texto-final-copiable').value = "";
             actualizarContadores();
-            document.getElementById('contador-resultado').textContent = "0 palabras";
-            mostrarToast('Texto limpiado');
+            mostrarToast('Campos limpios');
         }
 
-        function humanizarTextoAvanzado() {
+        function procesarMetodoHumano() {
             let texto = document.getElementById('texto-entrada').value.trim();
             if (!texto) {
                 mostrarToast('Por favor ingresa un texto para procesar.');
                 return;
             }
 
-            // 1. Diccionario masivo de frases corporativas / IA
-            const frasesIA = [
-                { regex: /Es importante destacar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">La neta es que</mark>' },
-                { regex: /Es fundamental comprender que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hay que tener bien en claro que</mark>' },
-                { regex: /En la actualidad,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hoy en día</mark>' },
-                { regex: /Por consiguiente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Así que</mark>' },
-                { regex: /Asimismo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">También</mark>' },
-                { regex: /En conclusión,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Para acabar,</mark>' },
-                { regex: /Por lo tanto,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Por eso</mark>' },
-                { regex: /Cabe señalar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Ojo con esto:</mark>' },
-                { regex: /Adicionalmente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Además</mark>' },
-                { regex: /En resumen,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Resumiendo,</mark>' },
-                { regex: /A lo largo de los años,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Con el tiempo,</mark>' },
-                { regex: /Sin embargo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Pero ojo,</mark>' },
-                { regex: /Por otro lado,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Por otro lado</mark>' },
-                { regex: /es fundamental que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">toca sí o sí</mark>' },
-                { regex: /proporciona una variedad de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">te trae un buen de</mark>' },
-                { regex: /juega un papel crucial/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">es clave</mark>' },
-                { regex: /en orden de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para</mark>' },
-                { regex: /a fin de que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para que</mark>' },
-                { regex: /en relación con/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">sobre</mark>' },
-                { regex: /con el propósito de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para</mark>' },
-                { regex: /se puede observar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">se nota que</mark>' },
-                { regex: /de la misma manera/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">igual</mark>' },
-                { regex: /en este sentido,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">así que</mark>' },
-                { regex: /por lo general,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">casi siempre</mark>' },
-                { regex: /debido a que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">porque</mark>' },
-                { regex: /con la finalidad de/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">para</mark>' },
-                { regex: /por ende,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">entonces</mark>' }
-            ];
+            // 1. Limpieza inicial de muletillas de IA comunes para preparar el terreno
+            let limpio = texto
+                .replace(/Es importante destacar que/gi, "")
+                .replace(/En la actualidad,/gi, "")
+                .replace(/Por consiguiente,/gi, "")
+                .replace(/Asimismo,/gi, "")
+                .replace(/En conclusión,/gi, "")
+                .replace(/Cabe señalar que/gi, "");
 
-            let textoModificado = texto;
-            frasesIA.forEach(item => {
-                textoModificado = textoModificado.replace(item.regex, item.cambio);
+            // 2. Fragmentar en oraciones cortas (Paso 2)
+            let frases = limpio.split(/[\.\!\?]\s+/).filter(f => f.trim().length > 0);
+            let parrafosCortosHTML = frases.map(f => `<p class="mb-2">• ${f.trim()}.</p>`).join('');
+            document.getElementById('parrafos-cortos').innerHTML = parrafosCortosHTML;
+
+            // 3. Generar viñetas clave (Paso 1)
+            let viñetasHTML = "";
+            let seleccionadas = frases.slice(0, 4); // Tomar hasta 4 puntos clave
+            seleccionadas.forEach(frase => {
+                viñetasHTML += `• ${frase.trim()}.<br>`;
             });
+            document.getElementById('resumen-viñetas').innerHTML = viñetasHTML || "• Analiza y reescribe este bloque con tus propias palabras.";
 
-            // 2. Diccionario masivo de sinónimos directos
-            const sinónimos = [
-                { regex: /\butilizar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>' },
-                { regex: /\badquirir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">conseguir</mark>' },
-                { regex: /\bcomunicarse\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">hablar</mark>' },
-                { regex: /\bimplementar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">armar</mark>' },
-                { regex: /\bgarantizar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">asegurar</mark>' },
-                { regex: /\bfacilitar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">hacer más fácil</mark>' },
-                { regex: /\bóptimo\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">ideal</mark>' },
-                { regex: /\bdesarrollar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">crear</mark>' },
-                { regex: /\bexcepcional\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">buenísimo</mark>' },
-                { regex: /\bdemostrar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">mostrar</mark>' },
-                { regex: /\brequerir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">pedir</mark>' },
-                { regex: /\bofrecer\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">dar</mark>' },
-                { regex: /\bpermitir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">dejar</mark>' },
-                { regex: /\bemplear\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>' },
-                { regex: /\bconseguir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">agarrar</mark>' }
-            ];
+            // 4. Construir texto final depurado (Paso 3)
+            let textoDepurado = frases.join('. ') + '.';
+            document.getElementById('texto-final-copiable').value = textoDepurado;
 
-            sinónimos.forEach(item => {
-                textoModificado = textoModificado.replace(item.regex, item.cambio);
-            });
-
-            // 3. Limpieza y traducción automática de adverbios en "-mente"
-            textoModificado = textoModificado.replace(/\b([a-záéíóúñ]+)mente\b/gi, function(match, raiz) {
-                let raizLower = raiz.toLowerCase();
-                let conversiones = {
-                    'actual': 'hoy en día',
-                    'fundamental': 'básicamente',
-                    'principal': 'sobre todo',
-                    'total': 'por completo',
-                    'general': 'casi siempre',
-                    'clara': 'bien',
-                    'precisa': 'exacto',
-                    'constante': 'a cada rato',
-                    'frecuente': 'muy seguido',
-                    'perfecta': 'al 100'
-                };
-                if (conversiones[raizLower]) {
-                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${conversiones[raizLower]}</mark>`;
-                } else {
-                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${raiz} de forma clara</mark>`;
-                }
-            });
-
-            // 4. Modificación estructural: Fragmentar oraciones excesivamente largas (romper monotonía de la IA)
-            // Divide oraciones largas separadas por comas o conectores en puntos y seguido para aumentar la "Burstiness"
-            let parrafos = textoModificado.split('\n');
-            let parrafosModificados = parrafos.map(parrafo => {
-                // Si el párrafo es largo, dividimos algunos fragmentos largos para dar ritmo humano
-                return parrafo
-                    .replace(/, por lo cual /g, '. Así que ')
-                    .replace(/, lo que permite /g, '. Esto te deja ')
-                    .replace(/, y esto a su vez /g, '. Y eso ');
-            });
-
-            textoModificado = parrafosModificados.join('<br>');
-
-            // Guardar texto limpio sin etiquetas HTML para copiar
-            let temporalDiv = document.createElement('div');
-            temporalDiv.innerHTML = textoModificado;
-            textoLimpioGlobal = temporalDiv.textContent || temporalDiv.innerText || "";
-
-            // Renderizar resultado con marcas en amarillo
-            document.getElementById('resultado-container').innerHTML = textoModificado;
-            
-            const palabrasRes = textoLimpioGlobal.split(/\s+/).length;
-            document.getElementById('contador-resultado').textContent = `${palabrasRes} palabras`;
-            
-            mostrarToast('¡Estructura y palabras humanizadas con éxito!');
+            mostrarToast('¡Estructura generada con éxito!');
         }
 
-        function copiarTextoResultado() {
-            if (!textoLimpioGlobal) {
-                mostrarToast('Primero humaniza un texto.');
+        function copiarResultadoFinal() {
+            const salida = document.getElementById('texto-final-copiable');
+            if (!salida.value) {
+                mostrarToast('Primero genera la estructura.');
                 return;
             }
-            navigator.clipboard.writeText(textoLimpioGlobal);
-            mostrarToast('¡Texto limpio copiado al portapapeles!');
+            navigator.clipboard.writeText(salida.value);
+            mostrarToast('¡Texto copiado al portapapeles!');
         }
 
         function mostrarToast(mensaje) {
