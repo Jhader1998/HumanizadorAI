@@ -62,7 +62,7 @@
                 <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Humanizador IA Pro</span>
             </div>
             <div class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full font-semibold">
-                Modo Multicapa & Reescritura Activa
+                Modo Frases + Sinónimos Activo
             </div>
         </div>
     </header>
@@ -81,8 +81,8 @@
         <!-- SECCIÓN: HUMANIZADOR -->
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto space-y-2">
-                <h1 class="text-3xl font-extrabold text-slate-900">Transformador Profundo de Textos IA</h1>
-                <p class="text-slate-500 text-sm">Elimina los patrones artificiales, modismos corporativos y terminaciones robóticas. Las modificaciones masivas se marcarán en amarillo.</p>
+                <h1 class="text-3xl font-extrabold text-slate-900">Transformador Masivo de Textos IA</h1>
+                <p class="text-slate-500 text-sm">Modifica frases enteras, aplica sinónimos avanzados y elimina modismos robóticos. Las modificaciones se marcarán en amarillo.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6 items-start">
@@ -99,7 +99,7 @@
                         <button onclick="limpiarTexto()" class="text-xs text-slate-500 hover:text-red-500 transition">Limpiar</button>
                         <button onclick="humanizarTextoMasivo()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2 text-sm">
                             <i data-lucide="zap" class="w-4 h-4"></i>
-                            <span>Humanizar a Fondo</span>
+                            <span>Humanizar por Frases y Sinónimos</span>
                         </button>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
         </div>
     </footer>
 
-    <!-- Lógica de JavaScript Masiva y Multicapa -->
+    <!-- Lógica de JavaScript Avanzada: Frases + Sinónimos + Sufijos -->
     <script>
         lucide.createIcons();
         let textoLimpioGlobal = "";
@@ -168,10 +168,10 @@
                 return;
             }
 
-            // 1. Diccionario amplio de expresiones robóticas y corporativas de IA
+            // 1. CAPA DE REEMPLAZO POR FRASES COMPLETAS
             const reemplazosFrases = [
                 { regex: /Es importante destacar que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">La neta es que</mark>' },
-                { regex: /Es fundamental comprender que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hay que entender bien que</mark>' },
+                { regex: /Es fundamental comprender que/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hay que entender muy bien que</mark>' },
                 { regex: /En la actualidad,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Hoy en día</mark>' },
                 { regex: /Por consiguiente,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Así que</mark>' },
                 { regex: /Asimismo,/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">Además</mark>' },
@@ -204,8 +204,8 @@
                 textoModificado = textoModificado.replace(item.regex, item.cambio);
             });
 
-            // 2. Diccionario de palabras individuales frecuentes generadas por IA
-            const palabrasClave = [
+            // 2. CAPA DE USO DE SINÓNIMOS Y PALABRAS CLAVE FRECUENTES
+            const sinónimos = [
                 { regex: /\butilizar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>' },
                 { regex: /\badquirir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">conseguir</mark>' },
                 { regex: /\bcomunicarse\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">hablar</mark>' },
@@ -216,46 +216,49 @@
                 { regex: /\bdesarrollar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">crear</mark>' },
                 { regex: /\bexcepcional\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">buenísimo</mark>' },
                 { regex: /\bdemostrar\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">mostrar</mark>' },
-                { regex: /\brequerir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">pedir</mark>' }
+                { regex: /\brequerir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">pedir</mark>' },
+                { regex: /\bofrecer\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">dar</mark>' },
+                { regex: /\bpermitir\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">dejar</mark>' },
+                { regex: /\bemplear\b/gi, cambio: '<mark class="bg-yellow-200 px-1 rounded font-medium">usar</mark>' }
             ];
 
-            palabrasClave.forEach(item => {
+            sinónimos.forEach(item => {
                 textoModificado = textoModificado.replace(item.regex, item.cambio);
             });
 
-            // 3. Transformación algorítmica masiva de adverbios en "-mente" (muy típicos de la IA)
-            // Esto detecta cualquier palabra terminada en mente y la suaviza o resalta
+            // 3. CAPA DE TRANSFORMACIÓN DE ADVERBIOS EN "-MENTE"
             textoModificado = textoModificado.replace(/\b([a-záéíóúñ]+)mente\b/gi, function(match, raiz) {
-                // Si la palabra es muy común, la convertimos de forma natural
-                let conversionesComunes = {
+                let raizLower = raiz.toLowerCase();
+                let conversiones = {
                     'actual': 'hoy en día',
                     'fundamental': 'básicamente',
                     'principal': 'sobre todo',
                     'total': 'por completo',
                     'general': 'casi siempre',
                     'clara': 'bien',
-                    'precisa': 'exacto'
+                    'precisa': 'exacto',
+                    'constante': 'a cada rato',
+                    'frecuente': 'muy seguido'
                 };
-                let raizLower = raiz.toLowerCase();
-                if (conversionesComunes[raizLower]) {
-                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${conversionesComunes[raizLower]}</mark>`;
+                if (conversiones[raizLower]) {
+                    return `<mark class="bg-yellow-200 px-1 rounded font-medium">${conversiones[raizLower]}</mark>`;
                 } else {
                     return `<mark class="bg-yellow-200 px-1 rounded font-medium">${raiz} de forma clara</mark>`;
                 }
             });
 
-            // Guardar texto limpio sin etiquetas HTML para cuando el usuario quiera copiarlo
+            // Guardar texto limpio sin etiquetas HTML para copiar
             let temporalDiv = document.createElement('div');
             temporalDiv.innerHTML = textoModificado;
             textoLimpioGlobal = temporalDiv.textContent || temporalDiv.innerText || "";
 
-            // Mostrar en pantalla con marcas amarillas
+            // Renderizar resultado con marcas en amarillo
             document.getElementById('resultado-container').innerHTML = textoModificado;
             
             const palabrasRes = textoLimpioGlobal.split(/\s+/).length;
             document.getElementById('contador-resultado').textContent = `${palabrasRes} palabras`;
             
-            mostrarToast('¡Texto humanizado profundamente!');
+            mostrarToast('¡Texto humanizado por frases y sinónimos!');
         }
 
         function copiarTextoResultado() {
